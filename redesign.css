@@ -380,3 +380,13 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 50; pointer-event
 @media (max-width: 767px) {
   .case-videos .video:nth-child(2):has(figcaption) { margin-top: 14px; }
 }
+
+/* tablet em pé (768–1023 px): a abertura empilha como no celular para as formas não cobrirem o título */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .abertura { grid-template-columns: minmax(0, 1fr) !important; min-height: 0; }
+  .abertura .meta { grid-column: 1; grid-row: 1; }
+  .abertura .display { grid-column: 1; grid-row: 2 !important; }
+  .formas--abertura { grid-column: 1; grid-row: 3; justify-self: start; align-self: start; margin-right: 0; margin-left: calc(var(--w) / 2); }
+  .abertura-linha .lead { grid-column: 1; grid-row: 4 !important; justify-self: start; }
+  .abertura-linha .botao { grid-column: 1; grid-row: 5 !important; }
+}
