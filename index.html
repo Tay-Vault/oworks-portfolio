@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="redesign.css">
 </head>
 <body>
 
@@ -32,9 +33,11 @@
 <main id="topo">
 
   <section class="abertura claro">
+    <div class="meta"><span>Portfólio · 2026</span><span>Direção criativa — Vídeo — Design — Fotografia</span></div>
+    <div class="formas formas--abertura" aria-hidden="true"><span class="f-circulo"></span><span class="f-meio"></span></div>
     <h1 class="display">A gente dá forma ao que a sua marca quer ser.</h1>
     <div class="abertura-linha">
-      <p class="lead">A O'Works é um estúdio de direção criativa e comunicação. Pensamos a estratégia, criamos a ideia e cuidamos de cada peça até ela ganhar vida, em vídeo, design e fotografia.</p>
+      <p class="lead"><span class="linha">A O'Works é um estúdio de direção</span> <span class="linha">criativa e comunicação. Pensamos a</span> <span class="linha">estratégia, criamos a ideia e cuidamos</span> <span class="linha">de cada peça até ela ganhar vida,</span> <span class="linha">em vídeo, design e fotografia.</span></p>
       <a class="botao" href="#projetos">Ver projetos ↓</a>
     </div>
   </section>
@@ -51,8 +54,15 @@
     <div class="reel-fim" aria-hidden="true"><img src="assets/img/logo-oworks.png" alt=""></div>
   </section>
 
+  <div class="faixa escuro" aria-hidden="true"><div class="faixa-trilho">
+    <span>Direção criativa</span><i></i><span>Estratégia</span><i></i><span>Vídeo</span><i></i><span>Design</span><i></i><span>Fotografia</span><i></i>
+    <span>Direção criativa</span><i></i><span>Estratégia</span><i></i><span>Vídeo</span><i></i><span>Design</span><i></i><span>Fotografia</span><i></i>
+  </div></div>
+
   <section class="sobre escuro">
-    <p class="rotulo">Sobre o estúdio</p>
+
+    <p class="rotulo so-cel">Sobre o estúdio</p>
+    <div class="meta"><span>(01) Sobre o estúdio</span><span>O'Works</span></div>
     <div class="coluna">
       <h2 class="titulo">Toda marca tem uma personalidade. Nosso trabalho é fazer ela aparecer.</h2>
       <div class="paragrafos">
@@ -64,122 +74,128 @@
   </section>
 
   <section class="projetos claro" id="projetos">
-    <p class="rotulo">Projetos</p>
+    <p class="rotulo so-cel">Projetos</p>
+    <div class="meta"><span>(02) Projetos</span><span>Uma seleção entre mais de 40 marcas</span></div>
+    <p class="gigante" aria-hidden="true">Projetos</p>
     <h2 class="titulo coluna">Mais de 40 marcas, dos mais diversos segmentos. Da saúde à gastronomia, da engenharia à tecnologia, algumas histórias que ajudamos a contar.</h2>
   </section>
 
-  <article class="case claro com-linha">
+  <article id="case-1" class="case claro com-linha">
     <div class="case-head">
-      <p class="rotulo">01 / 06</p>
+      <p class="rotulo so-cel">01 / 06</p><p class="rotulo case-seg">Saúde e estética</p><span class="case-num" aria-hidden="true">01</span>
       <h3 class="case-nome">Lorena Vervloet</h3>
       <p class="lead suave">Cuidado que dá para ver.</p>
     </div>
     <p class="case-desc">Uma cirurgiã-dentista especializada em harmonização orofacial, que trata a estética como cuidado, e não como promessa. A comunicação coloca a Lorena no centro: rosto real, explicação clara e a mesma delicadeza do consultório, agora nas telas.</p>
     <p class="case-svc">Direção criativa · Roteiro · Captação · Edição · Design</p>
     <div class="case-videos">
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-l01.jpg" data-src="assets/video/cases/l01.mp4"></video></figure>
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-l04.jpg" data-src="assets/video/cases/l04.mp4"></video></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-l01.jpg" data-src="assets/video/cases/l01.mp4"></video></div></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-l04.jpg" data-src="assets/video/cases/l04.mp4"></video></div></figure>
     </div>
   </article>
 
-  <article class="case escuro invertido">
+  <article id="case-2" class="case escuro invertido">
     <div class="case-head">
-      <p class="rotulo">02 / 06</p>
+      <p class="rotulo so-cel">02 / 06</p><p class="rotulo case-seg">Engenharia</p><span class="case-num" aria-hidden="true">02</span>
       <h3 class="case-nome">Avantec</h3>
       <p class="lead suave">Engenharia com rosto.</p>
     </div>
     <p class="case-desc">Uma empresa técnica contada pelas pessoas que fazem ela acontecer. Entrevistas, datas importantes para o time e presença nas cidades onde atua deram à marca uma voz próxima e humana.</p>
     <p class="case-svc">Direção criativa · Planejamento · Captação · Edição</p>
     <div class="case-videos">
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-a01.jpg" data-src="assets/video/cases/a01.mp4"></video></figure>
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-a06.jpg" data-src="assets/video/cases/a06.mp4"></video></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-a01.jpg" data-src="assets/video/cases/a01.mp4"></video></div></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-a06.jpg" data-src="assets/video/cases/a06.mp4"></video></div></figure>
     </div>
   </article>
 
-  <article class="case claro">
+  <article id="case-3" class="case claro">
     <div class="case-head">
-      <p class="rotulo">03 / 06</p>
+      <p class="rotulo so-cel">03 / 06</p><p class="rotulo case-seg">Gastronomia</p><span class="case-num" aria-hidden="true">03</span>
       <h3 class="case-nome">38 by Castelinho</h3>
       <p class="lead suave">Um lugar para se imaginar.</p>
     </div>
     <p class="case-desc">Luz da manhã, vista do terraço, mesa posta. Os vídeos traduzem o clima da casa no ritmo calmo de quem aproveita sem pressa, e fazem o lugar ser desejado antes da primeira visita.</p>
     <p class="case-svc">Direção criativa · Captação · Edição</p>
     <div class="case-videos">
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-c06.jpg" data-src="assets/video/cases/c06.mp4"></video></figure>
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-c08.jpg" data-src="assets/video/cases/c08.mp4"></video></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-c06.jpg" data-src="assets/video/cases/c06.mp4"></video></div></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-c08.jpg" data-src="assets/video/cases/c08.mp4"></video></div></figure>
     </div>
   </article>
 
-  <article class="case escuro invertido">
+  <article id="case-4" class="case escuro invertido">
     <div class="case-head">
-      <p class="rotulo">04 / 06</p>
+      <p class="rotulo so-cel">04 / 06</p><p class="rotulo case-seg">Gastronomia</p><span class="case-num" aria-hidden="true">04</span>
       <h3 class="case-nome">Fogata</h3>
       <p class="lead suave">Argentina de coração, capixaba de endereço.</p>
     </div>
     <p class="case-desc">Empanadas e cozinha argentina feitas em Vila Velha. O conteúdo leva para a tela o calor do forno e a história por trás de cada receita, aproximando a marca de quem pede pelo app.</p>
     <p class="case-svc">Direção criativa · Roteiro · Captação · Edição · Design</p>
     <div class="case-videos">
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-f013.jpg" data-src="assets/video/cases/f013.mp4"></video></figure>
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-f010.jpg" data-src="assets/video/cases/f010.mp4"></video></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-f013.jpg" data-src="assets/video/cases/f013.mp4"></video></div></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-f010.jpg" data-src="assets/video/cases/f010.mp4"></video></div></figure>
     </div>
   </article>
 
-  <article class="case escuro com-linha">
+  <article id="case-5" class="case escuro com-linha">
     <div class="case-head">
-      <p class="rotulo">05 / 06</p>
+      <p class="rotulo so-cel">05 / 06</p><p class="rotulo case-seg">Gastronomia</p><span class="case-num" aria-hidden="true">05</span>
       <h3 class="case-nome">La Dolina e<br>La Dolina Horno</h3>
       <p class="lead suave">Comida que dá vontade.</p>
     </div>
     <p class="case-desc">Do forno à mesa, cada vídeo foi feito para abrir o apetite. Massa, fogo e hambúrguer filmados de perto, no ritmo de uma casa pensada para dividir.</p>
     <p class="case-svc">Captação · Edição · Fotografia</p>
     <div class="case-videos">
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-d195.jpg" data-src="assets/video/cases/d195.mp4"></video><figcaption>La Dolina</figcaption></figure>
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-d176.jpg" data-src="assets/video/cases/d176.mp4"></video><figcaption>La Dolina Horno</figcaption></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-d195.jpg" data-src="assets/video/cases/d195.mp4"></video></div><figcaption>La Dolina</figcaption></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-d176.jpg" data-src="assets/video/cases/d176.mp4"></video></div><figcaption>La Dolina Horno</figcaption></figure>
     </div>
   </article>
 
-  <article class="case claro invertido">
+  <article id="case-6" class="case claro invertido">
     <div class="case-head">
-      <p class="rotulo">06 / 06</p>
+      <p class="rotulo so-cel">06 / 06</p><p class="rotulo case-seg">Gastronomia</p><span class="case-num" aria-hidden="true">06</span>
       <h3 class="case-nome">Maz Botafogo</h3>
       <p class="lead suave">Feito à mão, servido com calma.</p>
     </div>
     <p class="case-desc">Da massa aberta na hora ao prato pronto, os vídeos mostram o cuidado da cozinha e convidam a sentar e ficar.</p>
     <p class="case-svc">Captação · Edição · Fotografia</p>
     <div class="case-videos">
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-m282.jpg" data-src="assets/video/cases/m282.mp4"></video></figure>
-      <figure class="video"><video muted loop playsinline preload="none" poster="assets/img/poster-m272.jpg" data-src="assets/video/cases/m272.mp4"></video></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-m282.jpg" data-src="assets/video/cases/m282.mp4"></video></div></figure>
+      <figure class="video"><div class="tela"><video muted loop playsinline preload="none" poster="assets/img/poster-m272.jpg" data-src="assets/video/cases/m272.mp4"></video></div></figure>
     </div>
   </article>
 
   <section class="servicos escuro" id="o-que-fazemos">
-    <p class="rotulo">O que fazemos</p>
+    <p class="rotulo so-cel">O que fazemos</p>
+    <div class="meta"><span>(03) O que fazemos</span><span>Um olhar, cinco frentes</span></div>
+    <h2 class="display servicos-titulo">O que<br>fazemos</h2>
     <ul class="lista coluna">
-      <li><h3 class="item">Direção criativa</h3><p>O conceito que guia a marca e dá coerência a tudo o que ela publica, lança e mostra.</p></li>
-      <li><h3 class="item">Estratégia de comunicação</h3><p>Posicionamento, linha editorial e planejamento para que cada ação leve a marca aonde ela quer chegar.</p></li>
-      <li><h3 class="item">Vídeo</h3><p>Do roteiro à edição final, com captação no local, equipe e equipamento próprios.</p></li>
-      <li><h3 class="item">Design</h3><p>Identidade e sistemas visuais para redes, campanhas e peças de marca.</p></li>
-      <li><h3 class="item">Fotografia</h3><p>Produto, ambiente, pessoas e bastidores, na mesma linguagem da marca.</p></li>
+      <li><span class="num">01</span><h3 class="item">Direção criativa</h3><p>O conceito que guia a marca e dá coerência a tudo o que ela publica, lança e mostra.</p></li>
+      <li><span class="num">02</span><h3 class="item">Estratégia de comunicação</h3><p>Posicionamento, linha editorial e planejamento para que cada ação leve a marca aonde ela quer chegar.</p></li>
+      <li><span class="num">03</span><h3 class="item">Vídeo</h3><p>Do roteiro à edição final, com captação no local, equipe e equipamento próprios.</p></li>
+      <li><span class="num">04</span><h3 class="item">Design</h3><p>Identidade e sistemas visuais para redes, campanhas e peças de marca.</p></li>
+      <li><span class="num">05</span><h3 class="item">Fotografia</h3><p>Produto, ambiente, pessoas e bastidores, na mesma linguagem da marca.</p></li>
     </ul>
   </section>
 
   <section class="processo escuro com-linha">
-    <p class="rotulo">Como trabalhamos</p>
+    <p class="rotulo so-cel">Como trabalhamos</p>
+    <div class="meta"><span>(04) Como trabalhamos</span><span>Do começo ao fim, o mesmo olhar</span></div>
     <ol class="etapas">
-      <li><span class="rotulo">01</span><h3 class="item">Imersão</h3><p>Conhecemos a marca por dentro: negócio, público, história e ambição.</p></li>
-      <li><span class="rotulo">02</span><h3 class="item">Ideia</h3><p>Definimos o conceito e o caminho criativo, e tudo nasce a partir dele.</p></li>
-      <li><span class="rotulo">03</span><h3 class="item">Produção</h3><p>Roteiro, captação, design e fotografia com o mesmo olhar do início ao fim.</p></li>
-      <li><span class="rotulo">04</span><h3 class="item">Entrega</h3><p>Peças prontas, no tempo combinado, alinhadas ao que a marca quer alcançar.</p></li>
+      <li><span class="rotulo so-cel">01</span><span class="num-grande">01</span><h3 class="item">Imersão</h3><p>Conhecemos a marca por dentro: negócio, público, história e ambição.</p></li>
+      <li><span class="rotulo so-cel">02</span><span class="num-grande">02</span><h3 class="item">Ideia</h3><p>Definimos o conceito e o caminho criativo, e tudo nasce a partir dele.</p></li>
+      <li><span class="rotulo so-cel">03</span><span class="num-grande">03</span><h3 class="item">Produção</h3><p>Roteiro, captação, design e fotografia com o mesmo olhar do início ao fim.</p></li>
+      <li><span class="rotulo so-cel">04</span><span class="num-grande">04</span><h3 class="item">Entrega</h3><p>Peças prontas, no tempo combinado, alinhadas ao que a marca quer alcançar.</p></li>
     </ol>
   </section>
 
   <section class="quem claro">
-    <img class="foto" src="assets/img/tayssi-rocha.jpg" alt="Tayssi Rocha, em preto e branco" width="520" height="650" loading="lazy">
+    <div class="foto-moldura"><span class="f-circulo-foto" aria-hidden="true"></span><img class="foto" src="assets/img/tayssi-rocha.jpg" alt="Tayssi Rocha, em preto e branco" width="520" height="650" loading="lazy"></div>
     <div class="quem-texto">
-      <p class="rotulo">Quem dirige</p>
+      <p class="rotulo so-cel">Quem dirige</p>
+      <div class="meta"><span>(05) Quem dirige</span><span></span></div>
       <div>
         <h2 class="titulo">Tayssi Rocha</h2>
-        <p class="lead suave">Diretora criativa e fundadora da O'Works</p>
+        <p class="lead suave"><span class="linha">Diretora criativa e</span> <span class="linha">fundadora da O'Works</span></p>
       </div>
       <div class="paragrafos">
         <p>Tayssi trabalha no encontro entre estratégia e estética. Entende o que a marca precisa comunicar e cuida para que cada peça carregue essa ideia com verdade e beleza.</p>
@@ -190,10 +206,12 @@
 
   <section class="contato escuro" id="contato">
     <div class="chamada">
-      <h2 class="display">Vamos criar algo juntos?</h2>
-      <p class="lead suave">Conta pra gente o que a sua marca quer ser.</p>
+      <div class="meta"><span>(06) Contato</span><span>studio@oworks.agency</span></div>
+      <h2 class="display"><span class="linha">Vamos criar</span> <span class="linha">algo juntos?</span></h2>
+      <p class="lead suave"><span class="linha">Conta pra gente o que</span> <span class="linha">a sua marca quer ser.</span></p>
       <p class="links">
         <a href="mailto:studio@oworks.agency">studio@oworks.agency</a>
+        <a class="so-desk" href="mailto:hello@oworks.agency">hello@oworks.agency</a>
         <a href="https://wa.me/message/UG2DE52RIKDYO1" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://www.instagram.com/oworks.ag/" target="_blank" rel="noopener">Instagram</a>
       </p>

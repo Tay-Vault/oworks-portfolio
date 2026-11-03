@@ -1,0 +1,382 @@
+/* O'Works · redesenho editorial aprovado pela Tayssi em 03-11-2026. Carrega depois do styles.css. */
+@media (min-width: 768px) {
+
+:root { --t-gigante: clamp(88px, 15.5vw, 224px); }
+
+/* textura: grão leve sobre a página inteira */
+body::after { content: ""; position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: .09; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+.escuro { position: relative; }
+
+/* linha de informação no topo de cada seção */
+.meta { display: flex; justify-content: space-between; gap: 24px; font-size: 13px; font-weight: 500; letter-spacing: .02em; color: var(--suave); padding-bottom: 14px; border-bottom: 1px solid var(--linha); max-width: none !important; grid-column: 1 / -1; }
+
+/* formas geométricas */
+.formas { position: relative; }
+.f-circulo, .f-meio, .f-anel, .f-anel-grande, .f-circulo-foto, .f-seta { display: block; }
+
+/* abertura */
+.abertura { position: relative; align-content: space-between !important; padding-top: clamp(24px, 2.8vw, 40px); }
+.abertura .meta { grid-row: 1; }
+.abertura .display { grid-row: 2 !important; }
+.abertura-linha .lead { grid-row: 2 !important; }
+.abertura-linha .botao { grid-row: 3 !important; }
+.formas--abertura { grid-column: 2; grid-row: 2; justify-self: end; align-self: start; width: clamp(110px, 12.5vw, 180px); aspect-ratio: 1; max-width: none; margin-right: 0; }
+.formas--abertura .f-circulo { position: absolute; inset: 0; border-radius: 50%; background: var(--preto); }
+.formas--abertura .f-meio { position: absolute; width: 50%; height: 100%; left: -50%; top: 0; border-radius: 999px 0 0 999px; background: #D9D3C9; }
+.formas--abertura .f-anel { position: absolute; inset: 22%; border-radius: 50%; border: 1px solid var(--off-white); }
+
+/* faixa que corre */
+.faixa { overflow: hidden; padding: clamp(18px, 2.2vw, 30px) 0; border-bottom: 1px solid var(--linha); background: var(--fundo); color: var(--texto); }
+.faixa-trilho { display: flex; align-items: center; gap: clamp(20px, 2.8vw, 40px); width: max-content; animation: correr 38s linear infinite; font-size: var(--t-titulo); font-weight: 500; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+.faixa-trilho i { width: .32em; height: .32em; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.faixa-trilho i:nth-of-type(3n) { background: none; border: 1px solid currentColor; }
+@keyframes correr { to { transform: translateX(-50%); } }
+
+/* sobre */
+.sobre { grid-template-columns: minmax(0, 1fr) !important; overflow: hidden; row-gap: clamp(40px, 5vw, 72px) !important; padding-top: clamp(56px, 6.9vw, 100px) !important; }
+.sobre .titulo { font-size: var(--t-display); line-height: 1.04; letter-spacing: -0.03em; max-width: 13em; }
+.sobre .coluna { grid-column: 1 / -1 !important; gap: clamp(40px, 5vw, 72px) !important; }
+.sobre .paragrafos { max-width: none !important; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; width: 66.666%; justify-self: end; }
+.f-anel-grande { position: absolute; width: clamp(260px, 29vw, 420px); aspect-ratio: 1; border-radius: 50%; border: 1px solid var(--linha); left: calc(-1 * clamp(90px, 10vw, 140px)); bottom: calc(-1 * clamp(130px, 14.5vw, 210px)); pointer-events: none; }
+.f-anel-grande::after { content: ""; position: absolute; width: 18%; aspect-ratio: 1; border-radius: 50%; background: var(--off-white); right: 2%; top: 30%; }
+
+/* projetos */
+.projetos { row-gap: clamp(32px, 4vw, 56px) !important; padding-top: clamp(56px, 6.9vw, 100px) !important; }
+.gigante { grid-column: 1 / -1; font-size: var(--t-gigante); font-weight: 600; line-height: .82; letter-spacing: -0.055em; margin-left: -0.04em; max-width: none !important; }
+.gigante sup { font-size: .16em; font-weight: 500; letter-spacing: 0; vertical-align: top; position: relative; top: .35em; margin-left: .3em; }
+.projetos .titulo { font-size: var(--t-lead) !important; line-height: 1.45; letter-spacing: -0.005em; max-width: 30em; }
+
+/* cases */
+.case { position: relative; overflow: hidden; }
+.case-head { position: relative; }
+.case-num { display: block; font-size: clamp(120px, 17vw, 248px); font-weight: 600; line-height: .78; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1px var(--suave); margin: 4px 0 6px -0.05em; }
+.case-head .rotulo { order: -1; }
+.case-videos { align-items: flex-start; }
+.case-videos .video:nth-child(2) { margin-top: clamp(48px, 7vw, 100px); }
+.case:not(.invertido) .case-videos::before, .case.invertido .case-videos::after { content: none; }
+.case .case-videos { position: relative; }
+.case-svc { border-top: 1px solid var(--linha); padding-top: 14px; }
+.case .f-ponto { display: none; }
+
+/* o que fazemos */
+.servicos { row-gap: clamp(40px, 5vw, 72px) !important; align-items: start; }
+.servicos-titulo { grid-column: 1; max-width: none !important; }
+.servicos .lista { grid-column: 2; }
+.lista li { grid-template-columns: 48px minmax(0, 1fr) minmax(0, 360px) !important; align-items: baseline; }
+.lista .num { font-size: 13px; font-weight: 500; color: var(--suave); }
+.lista .item { font-size: var(--t-titulo); line-height: 1.08; letter-spacing: -0.02em; }
+
+/* como trabalhamos */
+.processo { padding-top: clamp(56px, 6.9vw, 100px) !important; }
+.processo.com-linha::before { display: none; }
+.etapas { gap: 0 !important; }
+.etapas li { border-top: 0 !important; border-left: 1px solid var(--linha); padding: 0 clamp(16px, 2vw, 28px) 8px !important; }
+.etapas li:first-child { border-left: 0; padding-left: 0 !important; }
+.num-grande { display: block; font-size: clamp(64px, 8.3vw, 120px); font-weight: 600; line-height: .85; letter-spacing: -0.05em; color: transparent; -webkit-text-stroke: 1px var(--texto); margin-bottom: 20px; }
+.etapas li:nth-child(2) { margin-top: clamp(24px, 3vw, 44px); }
+.etapas li:nth-child(3) { margin-top: clamp(48px, 6vw, 88px); }
+.etapas li:nth-child(4) { margin-top: clamp(72px, 9vw, 132px); }
+
+/* quem dirige */
+.quem { align-items: end !important; }
+.foto-moldura { position: relative; flex-shrink: 0; }
+.f-circulo-foto { position: absolute; width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--preto); right: -14%; top: -9%; }
+.foto-moldura .foto { position: relative; }
+.quem-texto .meta { width: 100%; }
+.quem .titulo { font-size: var(--t-display); line-height: .98; letter-spacing: -0.035em; }
+
+/* contato */
+.chamada { position: relative; padding-top: clamp(48px, 5.6vw, 80px) !important; }
+.chamada .display { font-size: var(--t-gigante); line-height: .86; letter-spacing: -0.05em; max-width: 7em; }
+.f-seta { position: absolute; right: 0; bottom: clamp(88px, 11vw, 160px); width: clamp(120px, 15vw, 216px); aspect-ratio: 1; border-radius: 50%; border: 1px solid var(--texto);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M32 68 68 32M40 32h28v28' fill='none' stroke='%23EFEBE4' stroke-width='1.6'/%3E%3C/svg%3E") center / 46% no-repeat; }
+
+/* celular */
+
+
+/* alinhamento: o texto de Projetos começa na mesma linha do texto da abertura */
+@media (min-width: 768px) { .projetos { grid-template-columns: minmax(0, 1fr) !important; } .projetos .titulo { grid-column: 1 !important; justify-self: end; width: 440px; max-width: 440px !important; } }
+@media (min-width: 768px) { .quem-texto { flex: 1; max-width: none !important; } .quem-texto .paragrafos { max-width: 560px; } }
+.meta span:first-child { white-space: nowrap; }
+
+/* ===== rodada 2 de ajustes da Tay ===== */
+
+/* sobre: parágrafos alinhados com o título, sem o anel */
+.sobre .paragrafos { width: 100%; justify-self: stretch; }
+
+/* projetos: índice dos cases à esquerda, embaixo da palavra Projetos */
+@media (min-width: 768px) {
+  .projetos { grid-template-columns: minmax(0, 1fr) 440px !important; align-items: end; }
+  .projetos .gigante { grid-column: 1 / -1; }
+  .projetos .indice { grid-column: 1; grid-row: 3; }
+  .projetos .titulo { grid-column: 2 !important; grid-row: 3; justify-self: stretch; width: auto; }
+}
+.indice { max-width: 560px !important; border-top: 1px solid var(--linha); }
+.indice a { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--linha); text-decoration: none; font-size: var(--t-corpo); font-weight: 500; transition: padding .2s; }
+.indice a:hover { padding-left: 8px; }
+.indice span { font-size: 13px; color: var(--suave); }
+.indice em { font-style: normal; font-size: 13px; color: var(--suave); }
+
+/* cases: número cheio, texto começa na altura do segundo vídeo, títulos dos vídeos nos espaços */
+.case-num { color: var(--texto); -webkit-text-stroke: 0; }
+@media (min-width: 768px) {
+  .case-head { padding-top: clamp(48px, 7vw, 100px); }
+  .case.com-linha .case-head { padding-top: clamp(48px, 7vw, 100px); }
+}
+.case-videos .video { display: flex; flex-direction: column; }
+.video figcaption { display: flex; gap: 10px; align-items: baseline; margin: 14px 0 0 !important; font-size: 14px; font-weight: 500; color: var(--texto); }
+.video figcaption span { font-size: 12px; color: var(--suave); }
+.case-videos .video:nth-child(2) { flex-direction: column-reverse; margin-top: calc(clamp(48px, 7vw, 100px) - 34px); }
+.case-videos .video:nth-child(2) figcaption { margin: 0 0 14px !important; }
+.video::after { top: auto !important; bottom: 50px; }
+.case-videos .video:nth-child(2)::after { bottom: 16px; }
+.video:has(figcaption)::after { top: auto !important; }
+
+/* como trabalhamos: etapas alinhadas */
+.etapas li:nth-child(n) { margin-top: 0 !important; }
+
+/* contato: título no tamanho da abertura, texto e links à direita alinhados pela base */
+.chamada .display { font-size: var(--t-display); line-height: 1.04; letter-spacing: -0.03em; max-width: 7em; }
+@media (min-width: 768px) {
+  .chamada { grid-template-columns: minmax(0, 1fr) 440px; column-gap: clamp(32px, 5vw, 96px); row-gap: 24px; }
+  .chamada .meta { grid-column: 1 / -1; margin-bottom: clamp(24px, 3vw, 48px); }
+  .chamada .display { grid-column: 1; grid-row: 2 / 4; align-self: end; }
+  .chamada .lead { grid-column: 2; grid-row: 2; align-self: end; }
+  .chamada .links { grid-column: 2; grid-row: 3; flex-direction: column; gap: 10px; padding-top: 0; font-size: var(--t-corpo); }
+}
+
+
+}
+
+/* celular: mesmo redesenho, adaptado à coluna única */
+.so-cel { display: none !important; }
+@media (max-width: 767px) {
+  .foto-moldura { position: relative; }
+
+  /* linha de informação */
+  .meta { font-size: 12px; padding-bottom: 12px; }
+  .abertura .meta span:last-child { display: none; }
+
+  /* abertura: título em quatro linhas, formas e texto alinhados à esquerda */
+  .abertura { padding-top: 20px; gap: 32px; }
+  .abertura .display { max-width: 6em; }
+  .formas--abertura { --w: 72px; display: block; position: relative; width: var(--w); aspect-ratio: 1; margin-left: calc(var(--w) / 2); order: 0; justify-self: start; }
+  .formas--abertura .f-circulo { position: absolute; inset: 0; border-radius: 50%; border: 14px solid var(--preto); }
+  .formas--abertura .f-meio { position: absolute; width: 50%; height: 100%; left: -50%; top: 0; border-radius: 999px 0 0 999px; background: #D9D3C9; }
+  .abertura-linha .lead .linha { display: block; }
+
+  /* faixa */
+  .faixa { padding: 16px 0; }
+  .faixa-trilho { font-size: 26px; gap: 18px; }
+
+  /* sobre */
+  .sobre { padding-top: 56px; }
+  .sobre .titulo { font-size: var(--t-display); line-height: 1.04; letter-spacing: -0.03em; max-width: 6.6em; }
+  .sobre .paragrafos { grid-template-columns: 1fr; gap: 20px; }
+
+  /* projetos */
+  .projetos { padding-top: 56px; row-gap: 24px; }
+  .gigante { font-size: 21vw; font-weight: 600; line-height: .82; letter-spacing: -0.055em; margin-left: -0.04em; }
+  .projetos .titulo { font-size: var(--t-lead); line-height: 1.45; letter-spacing: -0.005em; }
+
+  /* cases: segmento, número cheio, vídeos desencontrados com título nos espaços */
+  .case-seg { display: block; }
+  .case-num { display: block; font-size: 104px; font-weight: 600; line-height: .78; letter-spacing: -0.06em; color: var(--texto); margin: 2px 0 4px -0.05em; }
+  .case-videos { align-items: flex-start; }
+  .case-videos .video { display: flex; flex-direction: column; }
+  .case-videos .video:nth-child(2) { flex-direction: column-reverse; margin-top: 40px; }
+  .video figcaption { display: flex; gap: 8px; align-items: baseline; margin: 10px 0 0; font-size: 13px; font-weight: 500; color: var(--texto); }
+  .video figcaption span { font-size: 11px; color: var(--suave); }
+  .case-videos .video:nth-child(2) figcaption { margin: 0 0 10px; }
+  .video::after, .video:has(figcaption)::after { top: auto !important; bottom: 42px; }
+  .case-videos .video:nth-child(2)::after { bottom: 10px; }
+  .case-svc { border-top: 1px solid var(--linha); padding-top: 12px; }
+
+  /* o que fazemos */
+  .servicos-titulo { font-size: var(--t-display); }
+  .lista li { grid-template-columns: 32px minmax(0, 1fr) !important; }
+  .lista li p { grid-column: 2; }
+  .lista .num { font-size: 12px; color: var(--suave); }
+  .lista .item { font-size: 26px; line-height: 1.1; letter-spacing: -0.02em; }
+
+  /* como trabalhamos */
+  .processo { padding-top: 56px; }
+  .processo.com-linha::before { display: none; }
+  .etapas li { border-top: 0; padding-top: 0; }
+  .num-grande { display: block; font-size: 64px; font-weight: 600; line-height: .85; letter-spacing: -0.05em; color: transparent; -webkit-text-stroke: 1px var(--texto); margin-bottom: 4px; }
+
+  /* quem dirige */
+  .f-circulo-foto { position: absolute; width: 38%; aspect-ratio: 1; border-radius: 50%; background: var(--preto); right: -6%; top: -5%; }
+  .foto-moldura .foto { position: relative; width: 100%; }
+  .quem-texto { display: grid; gap: 24px; }
+  .quem .titulo { font-size: var(--t-display); line-height: .98; letter-spacing: -0.035em; }
+
+  /* contato */
+  .chamada { padding-top: 48px; }
+  .chamada .meta span:last-child { display: none; }
+  .chamada .display .linha, .chamada .lead .linha { display: block; }
+  .links .so-desk { display: inline; }
+  .chamada .links { gap: 0; font-size: var(--t-lead); line-height: 1.45; padding-top: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .faixa-trilho { animation: none; } }
+/* o bloco do nome mantém o espaçamento original (antes era o primeiro div do texto) */
+.quem-texto > div:has(> .titulo) { display: grid; gap: 10px; }
+
+/* ===== rodada 3 de ajustes da Tay (só computador) ===== */
+@media (min-width: 768px) {
+  /* abertura: o círculo cheio vira um O */
+  .formas--abertura .f-circulo { background: none; border: clamp(22px, 2.4vw, 35px) solid var(--preto); }
+
+  /* sobre: título na vertical à esquerda, texto à direita alinhado pela base (como a abertura) */
+  .sobre { grid-template-columns: minmax(0, 1fr) 440px !important; column-gap: clamp(32px, 5vw, 96px); }
+  .sobre .coluna { display: contents !important; }
+  .sobre .titulo { grid-column: 1; grid-row: 2; max-width: 6.6em; align-self: end; }
+  .sobre .paragrafos { grid-column: 2; grid-row: 2; align-self: end; width: auto; grid-template-columns: 1fr; gap: 20px; }
+
+  /* projetos: sem índice e sem contagem; texto embaixo do título, à esquerda */
+  .projetos { grid-template-columns: minmax(0, 1fr) !important; }
+  .projetos .titulo { grid-column: 1 !important; grid-row: auto; justify-self: start; width: auto; max-width: 560px !important; }
+
+  /* cases: segmento no lugar de "01 / 06" */
+  .case-head .so-cel { display: none; }
+
+  /* contato: duas linhas no título e duas no texto, alinhados no topo e na base */
+  .chamada .display { max-width: none; }
+  .chamada .linha { display: block; }
+  .chamada .display { grid-row: 2 / 4; align-self: stretch; }
+  .chamada .lead { grid-row: 2; align-self: start; padding-top: .35em; }
+  .chamada .links { grid-row: 3; align-self: end; }
+}
+.case-seg { display: none; }
+@media (min-width: 768px) { .case-seg { display: block; } }
+@media (min-width: 768px) { .projetos .titulo, .sobre .paragrafos p { text-wrap: pretty; } }
+
+/* ===== rodada 4 (só computador) ===== */
+.so-desk { display: none; }
+@media (min-width: 768px) {
+  .links .so-desk { display: inline; }
+  /* contato: texto embaixo do título; links à direita, terminando na base do texto */
+  .chamada .display { grid-column: 1; grid-row: 2; align-self: end; }
+  .chamada .lead { grid-column: 1; grid-row: 3; align-self: start; padding-top: 0; }
+  .chamada .links { grid-column: 2; grid-row: 2 / 4; align-self: end; }
+}
+@media (min-width: 768px) {
+  /* links na mesma régua do texto: mesmo tamanho e entrelinha, Instagram na linha de "a sua marca quer ser." */
+  .chamada .links { font-size: var(--t-lead); line-height: 1.45; gap: 0; }
+  .chamada .links a { text-underline-offset: 4px; }
+}
+@media (min-width: 768px) {
+  /* rodada 5: texto volta para cima dos links, à direita; "algo juntos?" na linha do Instagram */
+  .chamada .display { grid-column: 1; grid-row: 2 / 4; align-self: last baseline; }
+  .chamada .lead { grid-column: 2; grid-row: 2; align-self: end; padding-bottom: 16px; }
+  .chamada .links { grid-column: 2; grid-row: 3; align-self: last baseline; }
+}
+@media (min-width: 768px) {
+  /* rodada 6: bloco do contato um pouco mais baixo (mesma altura de seção) */
+  .chamada .meta { margin-bottom: clamp(56px, 6.7vw, 96px); }
+  .chamada { padding-bottom: clamp(56px, 7.7vw, 112px) !important; }
+}
+@media (min-width: 768px) {
+  /* rodada 7: texto do Sobre numa coluna mais estreita, crescendo para cima; base e margem direita mantidas */
+  .sobre .paragrafos { width: 300px; justify-self: end; }
+}
+@media (min-width: 768px) {
+  /* rodada 8: texto do Sobre sai da margem direita e começa na mesma linha do texto da abertura */
+  .sobre .paragrafos { justify-self: start; }
+}
+@media (min-width: 768px) {
+  /* rodada 9: quebras de linha do texto da abertura */
+  .abertura-linha .lead .linha { display: block; white-space: nowrap; }
+}
+@media (min-width: 768px) { .abertura-linha .lead { width: 440px; } }
+@media (min-width: 768px) {
+  /* rodada 10 (teste): formas começam na mesma linha do texto da abertura */
+  .formas--abertura { --w: clamp(110px, 12.5vw, 180px); width: var(--w); justify-self: end; margin-left: 0; margin-right: calc(440px - 1.5 * var(--w)); }
+}
+@media (max-width: 767px) {
+  .case-seg { display: block; }
+  .abertura .meta { order: 0; } .abertura .display { order: 1; } .formas--abertura { order: 2; } .abertura-linha { order: 3; }
+}
+@media (max-width: 767px) {
+  body::after { content: ""; position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: .09; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+  .meta { display: flex; justify-content: space-between; gap: 16px; font-weight: 500; letter-spacing: .02em; color: var(--suave); border-bottom: 1px solid var(--linha); }
+  .meta span:first-child { white-space: nowrap; }
+  .faixa { overflow: hidden; border-bottom: 1px solid var(--linha); background: var(--fundo); color: var(--texto); }
+  .faixa-trilho { display: flex; align-items: center; width: max-content; animation: correr 38s linear infinite; font-weight: 500; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+  .faixa-trilho i { width: .32em; height: .32em; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .faixa-trilho i:nth-of-type(3n) { background: none; border: 1px solid currentColor; }
+}
+@keyframes correr { to { transform: translateX(-50%); } }
+@media (max-width: 767px) {
+  /* quem dirige: foto um pouco mais estreita, círculo aparecendo dentro da margem */
+  .foto-moldura .foto { width: 82%; }
+  .f-circulo-foto { right: 0; top: -4%; width: 34%; }
+}
+
+/* ===== celular, rodada 2 ===== */
+@media (max-width: 767px) {
+  /* recuo comum dos textos de apoio: um quarto da largura */
+  .sobre .paragrafos { margin-left: 25%; }
+  .sobre .paragrafos p, .etapas li p { text-wrap: pretty; }
+  /* o que fazemos: mais ar entre o título e a lista */
+  .servicos .lista { margin-top: 24px; }
+  /* como trabalhamos: descrição no mesmo recuo */
+  .etapas li p { margin-left: 25%; }
+  /* quem dirige: cargo em duas linhas e espaço antes da descrição */
+  .quem .lead .linha { display: block; }
+  .quem-texto .paragrafos { margin-top: 16px; }
+}
+
+/* ===== celular, rodada 3 ===== */
+@media (max-width: 767px) {
+  /* mais respiro nas laterais da página inteira */
+  :root { --pad: 32px; }
+  /* textos de apoio: começam junto com o título e não encostam na margem direita */
+  .sobre .paragrafos, .etapas li p { margin-left: 0; max-width: 290px; }
+  .sobre .paragrafos p, .etapas li p, .lista li p, .quem-texto .paragrafos p, .case-desc { text-wrap: pretty; }
+  /* o que fazemos: títulos e descrições quebrando antes da margem */
+  .lista .item { max-width: 9em; }
+  .lista li p { max-width: 250px; }
+  /* quem dirige: foto centralizada e maior; texto mais estreito */
+  .foto-moldura { display: block; width: 92%; margin-inline: auto; }
+  .foto-moldura .foto { width: 100%; }
+  .f-circulo-foto { right: -8%; top: -5%; width: 34%; }
+  .quem-texto .paragrafos { max-width: 300px; }
+}
+@media (max-width: 767px) { .processo .meta span:last-child { display: none; } }
+
+/* ===== telas de vidro atrás dos vídeos (computador e celular) ===== */
+.tela { position: relative; padding: 7px; border-radius: 24px; isolation: isolate;
+  background: linear-gradient(150deg, rgba(255,255,255,.55), rgba(255,255,255,.14) 45%, rgba(255,255,255,.06));
+  border: 1px solid rgba(255,255,255,.6);
+  box-shadow: 0 18px 40px -18px rgba(30,30,30,.35), inset 0 1px 0 rgba(255,255,255,.7);
+  -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); }
+.escuro .tela { background: linear-gradient(150deg, rgba(239,235,228,.22), rgba(239,235,228,.07) 45%, rgba(239,235,228,.03));
+  border-color: rgba(239,235,228,.22); box-shadow: 0 18px 40px -18px rgba(0,0,0,.6), inset 0 1px 0 rgba(239,235,228,.25); }
+.claro .tela { background: linear-gradient(150deg, rgba(255,255,255,.7), rgba(255,255,255,.3) 45%, rgba(30,30,30,.04)); }
+.tela video { border-radius: 18px !important; }
+.tela::after { content: ""; position: absolute; top: 15px; left: 50%; width: 22%; height: 7px; transform: translateX(-50%); border-radius: 99px; background: rgba(30,30,30,.55); z-index: 2; pointer-events: none; }
+@media (max-width: 767px) { .tela { padding: 5px; border-radius: 18px; } .tela video { border-radius: 13px !important; } .tela::after { top: 11px; height: 5px; } }
+
+/* play no centro da tela, em vidro escuro com triângulo claro (mesmo tamanho de antes) */
+.video::after { content: none !important; }
+.tela::before { content: ""; position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; transform: translate(-50%, -50%); z-index: 2; border-radius: 50%; pointer-events: none; transition: opacity .2s;
+  background: rgba(30,30,30,.28) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cpath d='M18.5 14.5 30 22 18.5 29.5Z' fill='%23EFEBE4' fill-opacity='.92'/%3E%3C/svg%3E") center / 44px no-repeat;
+  border: 1px solid rgba(239,235,228,.35);
+  -webkit-backdrop-filter: blur(10px) saturate(130%); backdrop-filter: blur(10px) saturate(130%); }
+.video.tocando .tela::before { opacity: 0; }
+@media (max-width: 767px) { .tela::before { width: 40px; height: 40px; background-size: 40px; } }
+/* play no dobro do tamanho */
+.tela::before { width: 88px; height: 88px; background-size: 88px; }
+@media (max-width: 767px) { .tela::before { width: 64px; height: 64px; background-size: 64px; } }
+
+/* sem títulos embaixo dos vídeos: o segundo vídeo começa na altura do texto do case */
+@media (min-width: 768px) {
+  .case-videos .video:nth-child(2) { margin-top: clamp(48px, 7vw, 100px); }
+  .case-videos .video:nth-child(2):has(figcaption) { margin-top: calc(clamp(48px, 7vw, 100px) - 34px); }
+}
+@media (max-width: 767px) {
+  .case-videos .video:nth-child(2):has(figcaption) { margin-top: 14px; }
+}

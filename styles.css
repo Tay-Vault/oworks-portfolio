@@ -177,3 +177,12 @@ section > *, article > *, .site-header > * { max-width: calc(var(--max) - 2 * 80
   html { scroll-behavior: auto; }
   .reel-col video, .reel-fim { transition: none; }
 }
+
+/* abertura na desktop: título à esquerda em quatro linhas, texto à direita alinhado pela base, botão embaixo do título (ajuste aprovado pela Tay em 03-11-2026) */
+@media (min-width: 768px) {
+  .abertura { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(32px, 5vw, 96px); row-gap: clamp(28px, 3.3vw, 48px); align-content: end; min-height: min(78vh, 760px); }
+  .abertura .display { grid-column: 1; grid-row: 1; max-width: 6em; }
+  .abertura-linha { display: contents; }
+  .abertura-linha .lead { grid-column: 2; grid-row: 1; align-self: end; justify-self: end; max-width: 440px; }
+  .abertura-linha .botao { grid-column: 1; grid-row: 2; justify-self: start; }
+}

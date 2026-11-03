@@ -18,9 +18,9 @@ document.querySelectorAll(".menu a").forEach(a => a.addEventListener("click", ()
 const videos = [...document.querySelectorAll(".video video")];
 const tocar = v => {
   if (!v.src) v.src = v.dataset.src;
-  v.play().then(() => v.parentElement.classList.add("tocando")).catch(() => {});
+  v.play().then(() => v.closest(".video").classList.add("tocando")).catch(() => {});
 };
-const pausar = v => { v.pause(); v.parentElement.classList.remove("tocando"); };
+const pausar = v => { v.pause(); v.closest(".video").classList.remove("tocando"); };
 
 if (!semMovimento) {
   const io = new IntersectionObserver(entradas => {
@@ -31,8 +31,8 @@ if (!semMovimento) {
 
 videos.forEach(v => v.addEventListener("click", () => {
   const ligar = v.muted;
-  videos.forEach(o => { o.muted = true; o.parentElement.classList.remove("com-som"); });
-  if (ligar) { v.muted = false; v.parentElement.classList.add("com-som"); }
+  videos.forEach(o => { o.muted = true; o.closest(".video").classList.remove("com-som"); });
+  if (ligar) { v.muted = false; v.closest(".video").classList.add("com-som"); }
   tocar(v);
 }));
 
